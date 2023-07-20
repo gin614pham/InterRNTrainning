@@ -1,24 +1,28 @@
 import React, { useState, useEffect } from "react";
 import { Text, FlatList, View, ActivityIndicator } from "react-native";
-import axios from "axios";
+import {FetchUsers} from "../api/FetchUsers";
 
 const UserList = () => {
     const [users, setUsers] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
+    const fetchUsers = async () => {
+        try {
+            const data = await FetchUsers();
+            setUsers(data);
+            setLoading(false);
+        } catch (error) {
+            setError(error);
+            setLoading(false);
+        }
+    }
+   
     useEffect(() => {
-        axios
-            .get("https://jsonplaceholder.typicode.com/users")
-            .then((response) => {
-                setUsers(response.data);
-                setLoading(false);
-            })
-            .catch((error) => {
-                setError(error);
-                setLoading(false);
-            });
+        fetchUsers();
     }, []);
+
+
 
     if (loading) {
         return <ActivityIndicator />;

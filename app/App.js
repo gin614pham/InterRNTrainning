@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, StyleSheet, FlatList } from "react-native";
 // import { MyButton } from "../components/MyButton";
 // import { Counter } from "../components/Counter";
-import  UserList from "../api/UserList";
+import  UserList from "../components/UserList";
 
 const App = () => (
   <View style={styles.container}>
