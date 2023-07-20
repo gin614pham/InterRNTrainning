@@ -1,12 +1,12 @@
-import React from "react";
-import { View, Text, StyleSheet, FlatList } from "react-native";
+import React from 'react';
+import {View, Text, StyleSheet, FlatList} from 'react-native';
 // import { MyButton } from "../components/MyButton";
 // import { Counter } from "../components/Counter";
-import  UserList from "../components/UserList";
+import UserList from '../components/UserList';
 
 const App = () => (
   <View style={styles.container}>
-  {/* <Text style={styles.title}>Hello, React Native!</Text>
+    {/* <Text style={styles.title}>Hello, React Native!</Text>
   <MyButton buttonTitle="新規登録" buttonColor="salmon" />
   <MyButton buttonTitle="ログイン" buttonColor="mediumseagreen" />
   <FlatList 
@@ -16,10 +16,9 @@ const App = () => (
       extraData={{users}}
     />
   <Counter /> */}
-  <UserList />
-</View>
-
-)
+    <UserList />
+  </View>
+);
 
 export default App;
 
@@ -29,7 +28,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'honeydew',
     alignItems: 'center',
     justifyContent: 'center',
-    padding: 10
+    padding: 10,
   },
   title: {
     fontSize: 20,
@@ -37,7 +36,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: 'red',
   },
-})
+});
 
 const users = [
   {
